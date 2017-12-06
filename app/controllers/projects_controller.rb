@@ -6,10 +6,12 @@ class ProjectsController < ApplicationController
   end
   
   def show
+    @tasks = @project.tasks
   end
   
   def new
     @project = Project.new
+    3.times { @project.tasks.build }
   end
 
   def create

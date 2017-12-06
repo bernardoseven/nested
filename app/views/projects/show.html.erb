@@ -3,6 +3,14 @@
 	<h4><%= @project.name %></h4>
 	<h3>Descripción Proyecto</h3>
 	<h4><%= @project.desc %></h4>
+	<h3>Tareas Necesarias para completar proyecto</h3>
+	
+	<% @tasks.each do |f| %>
+	  <ol>
+	    <li><%= f.name %></li>
+	  </ol>
+	<% end %>
+
 	<%= link_to "Editar Proyecto", edit_project_path(@project) %>
 	<%= link_to "Eliminar Proyecto", @project, method: :delete, data: { confirm: "Estás seguro de querer eliminar este proyecto?" } %>
 	<p><%= link_to "Volver al listado de proyectos", projects_path %></p>

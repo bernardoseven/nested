@@ -3,5 +3,18 @@
   <p><%= f.text_field :name %></p>
   <p><%= f.label :Descripción_Proyecto %></p>
   <p><%= f.text_area :desc %></p>
+  <!-- 
+  Tasks as nested attributes
+   -->
+  <%= f.fields_for :tasks do |ff| %>
+    <h4>Tareas por hacer:</h4>
+    <li>
+    	<%= ff.label :Tarea %>
+    	<%= ff.text_field :name %>
+    </li>
+  <% end %>
+  <!-- 
+  End Tasks
+   -->
   <button><%= f.submit "Crear Proyecto" %></button>
 <% end %>
