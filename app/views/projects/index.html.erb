@@ -1,0 +1,9 @@
+<h3>Proyectos Actuales</h3>
+<% @projects.each do |f| %>
+<div>
+	<p><%= f.name %></p>
+	<%= link_to "Ver Proyecto", project_path(f) %>
+	<%= link_to "Eliminar Proyecto", f, method: :delete, data: { confirm: 'Estás seguro de querer eliminar este proyecto?' } %>
+</div>
+<% end %>
+<p><%= link_to "Crear Proyecto", new_project_path %></p>
